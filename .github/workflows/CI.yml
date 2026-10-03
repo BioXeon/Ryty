@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout (with submodules)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
@@ -156,7 +156,7 @@ jobs:
           zip -r "Ryty-$VER-linux-x86_64.zip" "$STAGE"
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: Ryty-linux-x86_64
           path: Ryty-*-linux-x86_64.zip
@@ -164,7 +164,7 @@ jobs:
 
       - name: Publish release (v* tags only)
         if: startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: Ryty-*-linux-x86_64.zip
           generate_release_notes: true
@@ -178,7 +178,7 @@ jobs:
         shell: msys2 {0}
     steps:
       - name: Checkout (with submodules)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
@@ -255,7 +255,7 @@ jobs:
             -DestinationPath "Ryty-$ver-windows-x86_64.zip" -Force
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: Ryty-windows-x86_64
           path: Ryty-*-windows-x86_64.zip
@@ -263,7 +263,7 @@ jobs:
 
       - name: Publish release (v* tags only)
         if: startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: Ryty-*-windows-x86_64.zip
           generate_release_notes: true
@@ -274,7 +274,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Checkout (with submodules)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
@@ -313,7 +313,7 @@ jobs:
           zip -r "Ryty-$VER-macos.zip" "$STAGE"
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: Ryty-macos
           path: Ryty-*-macos.zip
@@ -321,7 +321,7 @@ jobs:
 
       - name: Publish release (v* tags only)
         if: startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: Ryty-*-macos.zip
           generate_release_notes: true
@@ -332,7 +332,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout (with submodules)
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
